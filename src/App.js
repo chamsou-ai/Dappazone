@@ -13,12 +13,18 @@ import Dappazon from './abis/Dappazon.json'
 import config from './config.json'
 
 function App() {
-
+  const [account,setAccount] = useState(null)
+  const loadBlockchainData = async()=>{
+ 
+  }
+  useEffect(()=>{
+    loadBlockchainData()
+  },[])
   return (
     <div>
-
-      <h2>Welcome to Dappazon</h2>
-
+      <Navigation account={account} setAccount={setAccount} />
+      <h2>Welcome to Dappazon!</h2>
+      <p>{account}</p>
     </div>
   );
 }
